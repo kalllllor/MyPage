@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+
+.MainPage {
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Notable', sans-serif;
+}
