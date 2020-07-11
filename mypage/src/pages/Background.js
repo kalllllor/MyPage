@@ -64,11 +64,13 @@ class Background extends Component {
 
     render() {
         return (
-            <div className="background"
-                ref={mount => {
-                    this.mount = mount;
-                }}
-            />
+            <div className="background__background">
+                <div className="background"
+                    ref={mount => {
+                        this.mount = mount;
+                    }}
+                />
+            </div>
         );
     }
 }

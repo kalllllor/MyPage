@@ -1,0 +1,77 @@
+.Menu__button {
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: fixed;
+    right: 160px;
+    top: 80px;
+    z-index: 100;
+}
+
+.burger__button {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    margin: 0.7rem auto;
+    width: 3rem;
+    height: 0.3rem;
+    transition: all .5s ease-in-out;
+}
+
+.Menu__button div:nth-child(1) {
+    transform: translateX(-1rem);
+}
+
+.Menu__button:hover div {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.Menu__button div:nth-child(3) {
+    transform: translateX(-1rem);
+}
+
+.button__active div:nth-child(1) {
+    transform: rotate(-45deg) translateX(-1rem);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.button__active div:nth-child(2) {
+    transform: translateX(15rem);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.button__active div:nth-child(3) {
+    transform: rotate(45deg) translateX(-1rem);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.Menu__content {
+    height: 100vh;
+}
+
+.Menu__links {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 6%;
+    position: fixed;
+    right: calc(-300px);
+    transition: 0.7s;
+    width: 300px;
+    transition: all .5s ease-in-out;
+}
+
+.link {
+    color: rgba(17, 17, 17, 0.8);
+    cursor: pointer;
+    margin-top: 20%;
+    padding: 1rem 0;
+    transition: all .5s ease-in-out;
+}
+
+.link:hover {}
+
+.Menu__links--visible {
+    right: 0;
+}
