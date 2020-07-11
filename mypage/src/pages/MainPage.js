@@ -49,7 +49,7 @@ function MainPage() {
                     variants={container}
                     initial="hidden"
                     animate="visible">
-                    <h4><Clock format={'HH:mm:ss'} ticking={true} timezone={'UE'} /></h4><h4>{week[date - 1]}</h4>
+                    <h4><Clock format={'HH:mm:ss'} ticking={true} /></h4><h4>{week[date - 1]}</h4>
                 </motion.div>
             </div>
             <div className="MainPage__text">
@@ -69,7 +69,12 @@ function MainPage() {
                 </motion.div>
             </div>
             <div className="MainPage__socials">
-                <h3>Media</h3>
+                <motion.div className="logo__container"
+                    variants={container}
+                    initial="hidden"
+                    animate="visible">
+                    <h3>Media</h3>
+                </motion.div>
                 <Socials />
             </div>
             <div className="MainPage__logo">

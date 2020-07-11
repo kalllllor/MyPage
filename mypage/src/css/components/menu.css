@@ -11,7 +11,7 @@
 .burger__button {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
-    margin: 0.7rem auto;
+    margin: 0.5rem auto;
     width: 3rem;
     height: 0.3rem;
     transition: all .5s ease-in-out;
@@ -27,10 +27,11 @@
 
 .Menu__button div:nth-child(3) {
     transform: translateX(-1rem);
+    background: rgb(35, 41, 148);
 }
 
 .button__active div:nth-child(1) {
-    transform: rotate(-45deg) translateX(-1rem);
+    transform: rotate(-45deg) translateX(-1.1rem);
     background: rgba(255, 255, 255, 0.6);
 }
 
@@ -40,7 +41,7 @@
 }
 
 .button__active div:nth-child(3) {
-    transform: rotate(45deg) translateX(-1rem);
+    transform: rotate(45deg) translateX(-1.1rem);
     background: rgba(255, 255, 255, 0.6);
 }
 
@@ -50,28 +51,62 @@
 
 .Menu__links {
     align-items: center;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding-top: 6%;
     position: fixed;
-    right: calc(-300px);
+    top: calc(-1000px);
     transition: 0.7s;
-    width: 300px;
+    width: 100%;
     transition: all .5s ease-in-out;
+    z-index: 10;
+}
+
+.links__content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    margin: auto 0;
+    position: relative;
+    z-index: 10;
+}
+
+.content__background {
+    position: absolute;
+    z-index: 3;
+}
+
+.content__background h1 {
+    margin: 0;
+    font-size: 600px;
+    color: rgba(120, 120, 120, 0.05);
+}
+
+.links__content a {
+    margin: -5px;
+    font-size: 40px;
+}
+
+.links__content a {
+    margin-bottom: 5rem;
+    padding-bottom: 1rem;
 }
 
 .link {
-    color: rgba(17, 17, 17, 0.8);
+    border-bottom: 5px solid transparent;
+    color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
-    margin-top: 20%;
-    padding: 1rem 0;
+    margin-bottom: 10rem;
     transition: all .5s ease-in-out;
+    text-decoration: none;
 }
 
-.link:hover {}
+.link:hover {
+    border-bottom: 5px solid rgba(255, 255, 255, 0.8);
+}
 
 .Menu__links--visible {
-    right: 0;
+    top: 0;
 }

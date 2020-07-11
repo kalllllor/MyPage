@@ -27,10 +27,15 @@ class Menu extends Component {
                 </div>
                 <div className="Menu__content">
                     <div className={`Menu__links ${isVisible ? 'Menu__links--visible' : ''}`}>
-                        <a href="/" className="link">Strona główna</a>
-                        <a href="/" className="link">Projekty</a>
-                        <a href="/" className="link">O mnie</a>
-                        <a href="/" className="link">Kontakt</a>
+                        <div className="content__background">
+                            <h1>MENU</h1>
+                        </div>
+                        <div className="links__content">
+                            <a href="/" className="link">Strona główna</a>
+                            <a href="/" className="link">Projekty</a>
+                            <a href="/" className="link">O mnie</a>
+                            <a href="/" className="link">Kontakt</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -78,3 +78,7 @@
     bottom: 70px;
     right: 120px;
 }
+
+.MainPage__logo a {
+    font-size: 22px;
+}
