@@ -32,17 +32,17 @@
 
 .button__active div:nth-child(1) {
     transform: rotate(-45deg) translateX(-1.1rem);
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 1);
 }
 
 .button__active div:nth-child(2) {
     transform: translateX(15rem);
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 1);
 }
 
 .button__active div:nth-child(3) {
     transform: rotate(45deg) translateX(-1.1rem);
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 1);
 }
 
 .Menu__content {

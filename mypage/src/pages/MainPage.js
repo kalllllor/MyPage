@@ -36,7 +36,7 @@ const container = {
 
 const date = new Date().getDay();
 
-const week = ["poniedziałek", "wtorek", "sroda", "czwartek", "piątek", "sobota", "niedziela"]
+const week = ["niedziela", "poniedziałek", "wtorek", "sroda", "czwartek", "piątek", "sobota"]
 
 function MainPage() {
     return (
@@ -49,7 +49,7 @@ function MainPage() {
                     variants={container}
                     initial="hidden"
                     animate="visible">
-                    <h4><Clock format={'HH:mm:ss'} ticking={true} /></h4><h4>{week[date - 1]}</h4>
+                    <h4><Clock format={'HH:mm:ss'} ticking={true} /></h4><h4>{week[date]}</h4>
                 </motion.div>
             </div>
             <div className="MainPage__text">

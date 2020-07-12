@@ -42,7 +42,7 @@ class Background extends Component {
         this.stars = new THREE.Points(this.starGeo, this.starMaterial);
         this.scene.add(this.stars);
 
-        this.geometry = new THREE.BoxBufferGeometry(20, 12, 3);
+        this.geometry = new THREE.BoxBufferGeometry(30, 15, 5);
         this.edges = new THREE.EdgesGeometry(this.geometry);
         this.line = new THREE.LineSegments(this.edges, new THREE.LineBasicMaterial({ color: 0xffffff }));
         this.line.rotation.x += 0;
@@ -50,8 +50,13 @@ class Background extends Component {
         this.line.rotation.y += 1;
         this.scene.add(this.line);
 
+        //Raycasting
+        this.raycaster = new THREE.Raycaster();
+        this.mouse = new THREE.Vector2();
+
         this.animate();
 
+        window.addEventListener('mousemove', this.onMouseMove, false);
         window.addEventListener('resize', this.handleResize, false)
     }
 
@@ -63,7 +68,11 @@ class Background extends Component {
         this.starGeo.verticesNeedUpdate = true;
         this.stars.rotateY(0.0005 + Math.random() * 0.0008);
         this.line.rotation.y += 0.001;
-        // this.line.rotation.y += 0.001;
+
+        this.raycaster.setFromCamera(this.mouse, this.camera);
+        this.camera.position.x = this.mouse.x * 3;
+        this.camera.position.y = this.mouse.y * 3;
+
         this.renderer.render(this.scene, this.camera);
         requestAnimationFrame(this.animate);
     }
@@ -74,7 +83,14 @@ class Background extends Component {
         this.renderer.setSize(window.innerWidth, window.innerHeight)
     }
 
+
+    onMouseMove = (event) => {
+        this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        this.mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+    }
+
     render() {
+
         return (
             <div className="background__background">
                 <div className="background"
