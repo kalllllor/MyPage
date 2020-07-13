@@ -25,16 +25,16 @@ class Menu extends Component {
                     <div className={isVisible ? "burger__button burger__active" : "burger__button"} />
                     <div className={isVisible ? "burger__button burger__active" : "burger__button"} />
                 </div>
-                <div className="Menu__content">
-                    <div className={`Menu__links ${isVisible ? 'Menu__links--visible' : ''}`}>
-                        <div className="content__background">
-                            <h1>MENU</h1>
+                <div className={`Menu__links ${isVisible ? 'Menu__links--visible' : ''}`}>
+                    <div className="links__content">
+                        <div className="link__container">
+                            <a href="/" className="link">Projects</a>
                         </div>
-                        <div className="links__content">
-                            <a href="/" className="link">Strona główna</a>
-                            <a href="/" className="link">Projekty</a>
-                            <a href="/" className="link">O mnie</a>
-                            <a href="/" className="link">Kontakt</a>
+                        <div className="link__container">
+                            <a href="/" className="link">About me</a>
+                        </div>
+                        <div className="link__container">
+                            <a href="/" className="link">Contact</a>
                         </div>
                     </div>
                 </div>

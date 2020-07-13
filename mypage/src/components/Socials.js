@@ -53,7 +53,7 @@ function Socials() {
                 animate="visible"
             >
                 {socialsArray.map(item => (
-                    <motion.li key={item.index} className="item" variants={config} >
+                    <motion.li key={item.index} className="social__item" variants={config} >
                         <img src={item.icon} alt={item.tekst} />
                     </motion.li>
                 ))}

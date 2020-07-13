@@ -1,0 +1,9 @@
+.Project {
+    height: 10rem;
+    width: 5rem;
+    background-color: ivory;
+}
+
+.ProjectPage__content {
+    position: relative;
+}

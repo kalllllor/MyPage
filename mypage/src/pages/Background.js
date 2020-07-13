@@ -6,6 +6,12 @@ import "../css/pages/background.css"
 
 
 class Background extends Component {
+    constructor() {
+        super()
+        this.state = {
+            mouseX: null
+        }
+    }
     componentDidMount() {
         const width = this.mount.clientWidth;
         const height = this.mount.clientHeight;
@@ -68,11 +74,10 @@ class Background extends Component {
         this.starGeo.verticesNeedUpdate = true;
         this.stars.rotateY(0.0005 + Math.random() * 0.0008);
         this.line.rotation.y += 0.001;
-
+        this.mouseX = this.mouse.x;
         this.raycaster.setFromCamera(this.mouse, this.camera);
         this.camera.position.x = this.mouse.x * 3;
         this.camera.position.y = this.mouse.y * 3;
-
         this.renderer.render(this.scene, this.camera);
         requestAnimationFrame(this.animate);
     }
@@ -90,7 +95,6 @@ class Background extends Component {
     }
 
     render() {
-
         return (
             <div className="background__background">
                 <div className="background"

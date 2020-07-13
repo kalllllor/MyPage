@@ -13,20 +13,23 @@
     padding: 15px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 25px;
+    z-index: 2;
 }
 
-.item {
+.social__item {
     border-radius: 100%;
     transition: all .2s ease-in-out;
     cursor: pointer;
     position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
 }
 
-.item:hover {
+.social__item:hover {
     background-color: white;
 }
 
-.item img {
+.social__item img {
     position: absolute;
     margin: auto;
     top: 0;
