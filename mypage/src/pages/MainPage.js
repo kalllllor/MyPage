@@ -36,50 +36,43 @@ const container = {
 
 const date = new Date().getDay();
 
-const week = ["niedziela", "poniedziałek", "wtorek", "sroda", "czwartek", "piątek", "sobota"]
-
 function MainPage() {
     return (
         <div className="MainPage">
             <div className="MainPage__background" />
             <Menu />
             <Background />
-            <div className="MainPage__time">
-                <motion.div className="logo__container"
-                    variants={container}
-                    initial="hidden"
-                    animate="visible">
-                    <h4><Clock format={'HH:mm:ss'} ticking={true} /></h4><h4>{week[date]}</h4>
-                </motion.div>
-            </div>
-            <div className="MainPage__text">
-                <motion.div className="logo__container"
-                    variants={container}
-                    initial="hidden"
-                    animate="visible">
-                    <motion.div variants={config}>
-                        <h1>Dzień dobry,</h1>
+            <div className="MainPage__content">
+                <div className="MainPage__text">
+                    <motion.div className="logo__container"
+                        variants={container}
+                        initial="hidden"
+                        animate="visible">
+                        <motion.div variants={config}>
+                            <h1>Dzień dobry,</h1>
+                        </motion.div>
+                        <motion.h1 variants={config}>
+                            <h1>Nazywam sie Karol Greń</h1>
+                        </motion.h1>
+                        <motion.div variants={config} className="text__colored">
+                            <h3>aspiruję na stanowisko stażysty <h3 style={{ color: "rgb(35, 41, 148)" }}> frontend </h3>developera</h3>
+                        </motion.div>
                     </motion.div>
-                    <motion.h1 variants={config}>
-                        <h1>Nazywam sie Karol Greń</h1>
-                    </motion.h1>
-                    <motion.div variants={config} className="text__colored">
-                        <h3>aspiruję na stanowisko stażysty <h3 style={{ color: "rgb(35, 41, 148)" }}> frontend </h3>developera</h3>
+                </div>
+                <div className="MainPage__socials">
+                    <motion.div className="logo__container"
+                        variants={container}
+                        initial="hidden"
+                        animate="visible">
+                        <h3>Media</h3>
                     </motion.div>
-                </motion.div>
+                    <Socials />
+                </div>
+                <div className="MainPage__logo">
+                    <Logo />
+                </div>
             </div>
-            <div className="MainPage__socials">
-                <motion.div className="logo__container"
-                    variants={container}
-                    initial="hidden"
-                    animate="visible">
-                    <h3>Media</h3>
-                </motion.div>
-                <Socials />
-            </div>
-            <div className="MainPage__logo">
-                <Logo />
-            </div>
+
         </div>
     );
 }

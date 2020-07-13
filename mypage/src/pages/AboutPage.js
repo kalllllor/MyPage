@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { motion } from "framer-motion";
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
-import Project from "../components/Project"
 
 import "../css/pages/projectPage.css"
 
-class ProjectPage extends Component {
+import "../css/pages/aboutPage.css"
+
+class AboutPage extends Component {
     constructor() {
         super();
         this.state = {
@@ -29,26 +30,23 @@ class ProjectPage extends Component {
         };
 
         return (
-            <div className="ProjectPage" onMouseMove={this.updateMousePosition.bind(this)}>
+            <div className="AboutPage" onMouseMove={this.updateMousePosition.bind(this)}>
                 <ParallaxProvider >
-                    <Parallax className="ProjectPage__background" y={[-10, 50]}>
-                        <h1 style={stylesBackground}>PROJECTS</h1>
+                    <Parallax className="AboutPage__background" y={[-10, 50]}>
+                        <h1 style={stylesBackground}>ABOUT</h1>
                     </Parallax>
                 </ParallaxProvider>
-                <div className="ProjectPage__content" style={styles}>
+                <div className="AboutPage__content">
+
                     <div className="ProjectPage__title">
-                        <h1>Projects</h1>
-                    </div>
-                    <div className="ProjectPage__projects">
-                        <Project />
-                        <Project />
-                        <Project />
+                        <h1>About Me</h1>
                     </div>
                 </div>
+
             </div>
         )
     }
 
 }
 
-export default ProjectPage
+export default AboutPage
