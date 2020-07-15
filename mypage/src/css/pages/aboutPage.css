@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&display=swap');
+
 .AboutPage {
     width: 100vw;
     padding-top: 10vh;
     position: relative;
+    font-family: 'Chakra Petch', sans-serif;
 }
 
 .AboutPage__content {

@@ -1,5 +1,4 @@
 import React from "react";
-import Clock from 'react-live-clock';
 import { motion } from "framer-motion";
 
 import Background from "./Background"
@@ -33,8 +32,6 @@ const container = {
         }
     }
 };
-
-const date = new Date().getDay();
 
 function MainPage() {
     return (

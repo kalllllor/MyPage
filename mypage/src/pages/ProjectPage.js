@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { motion } from "framer-motion";
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
+import projectData from "../data/projectData"
+
 import Project from "../components/Project"
 
 import "../css/pages/projectPage.css"
@@ -40,9 +42,9 @@ class ProjectPage extends Component {
                         <h1>Projects</h1>
                     </div>
                     <div className="ProjectPage__projects">
-                        <Project />
-                        <Project />
-                        <Project />
+                        {projectData.map((item, id) => (
+                            <Project data={item} id={id} />
+                        ))}
                     </div>
                 </div>
             </div>

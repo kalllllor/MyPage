@@ -9,20 +9,116 @@
     position: absolute;
     width: 70%;
     height: 100%;
-    background-color: rgba(255, 255, 240, 0.7);
+    background-color: rgba(255, 255, 240, 0.2);
 }
 
 .Project__title {
     position: absolute;
-    right: -6vw;
+    right: 0;
     margin: 0;
     font-size: 8vh;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 2;
 }
 
-.Project__title h1 {
+.Project__background2 {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    right: 0;
+    background-color: rgba(255, 255, 240, 0.2);
+}
+
+.Project__title2 {
+    position: absolute;
+    left: 0;
+    margin: 0;
+    font-size: 8vh;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.Project__title h1,
+.Project__title2 h1 {
     color: transparent;
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+}
+
+.Project__title:hover h1,
+.Project__title2:hover h1 {
+    color: white;
+}
+
+.Project__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.content__icons {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 42.5px;
+    display: grid;
+    overflow: hidden;
+    margin: 0;
+    list-style: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+    margin: 0 0 15px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.content__title {
+
+    margin: 20px;
+
+}
+
+.content__title h2 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 0;
+}
+
+.content__desc {
+    margin: 0 15% 20px 20px;
+    text-align: justify;
+}
+
+.content__desc p {
+    color: white;
+    font-size: 18px;
+}
+
+.content__icon {
+    border-radius: 100%;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+}
+
+.content__icon:hover {
+    background-color: white;
+}
+
+.content__icon img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }

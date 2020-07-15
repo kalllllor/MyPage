@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MainPage from "../src/pages/MainPage"
 import ProjectPage from "../src/pages/ProjectPage"
 import AboutPage from "../src/pages/AboutPage"
+import ContactPage from "../src/pages/ContactPage"
 class App extends Component {
 
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
         <MainPage />
         <ProjectPage />
         <AboutPage />
+        <ContactPage />
       </div>
     );
   }
