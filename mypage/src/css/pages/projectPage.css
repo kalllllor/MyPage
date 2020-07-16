@@ -5,6 +5,7 @@
     padding-top: 10vh;
     padding-bottom: 10vh;
     font-family: 'Chakra Petch', sans-serif;
+    position: relative;
 }
 
 .ProjectPage__content {
@@ -31,8 +32,7 @@
 
 .ProjectPage__background {
     position: absolute;
-    top: 30vh;
-    left: -10%;
+    top: 0;
     z-index: 0;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -43,9 +43,9 @@
 }
 
 .ProjectPage__background h1 {
-    margin-top: 20%;
-    font-size: 50vh;
+    position: absolute;
+    left: -10vw;
+    margin: 0;
+    font-size: 30vw;
     color: rgba(238, 238, 238, 0.03);
-    -webkit-transform: translateZ(-999px) scale(1);
-    transform: translateZ(-999px) scale(1);
 }

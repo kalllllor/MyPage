@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { motion } from "framer-motion";
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
 import projectData from "../data/projectData"
@@ -31,9 +30,9 @@ class ProjectPage extends Component {
         };
 
         return (
-            <div className="ProjectPage" onMouseMove={this.updateMousePosition.bind(this)}>
+            <div id="project" className="ProjectPage" onMouseMove={this.updateMousePosition.bind(this)}>
                 <ParallaxProvider >
-                    <Parallax className="ProjectPage__background" y={[-10, 50]}>
+                    <Parallax className="ProjectPage__background">
                         <h1 style={stylesBackground}>PROJECTS</h1>
                     </Parallax>
                 </ParallaxProvider>

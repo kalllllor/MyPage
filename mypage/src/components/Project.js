@@ -1,5 +1,4 @@
 import * as React from "react";
-import { motion } from "framer-motion";
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
 import "../css/components/project.css"

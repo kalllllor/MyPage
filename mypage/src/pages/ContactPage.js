@@ -30,7 +30,7 @@ class ContactPage extends Component {
             transform: `translate(${x * 8}px, ${y * 8}px)`
         };
         return (
-            <div className="ContactPage" onMouseMove={this.updateMousePosition.bind(this)}>
+            <div id="contact" className="ContactPage" onMouseMove={this.updateMousePosition.bind(this)}>
                 <ParallaxProvider >
                     <Parallax className="ContactPage__background" y={[-10, 50]}>
                         <h1 style={stylesBackground}>CONTACT</h1>
@@ -45,19 +45,16 @@ class ContactPage extends Component {
                             <form className="contact-form" onSubmit={(e) => this.formSubmit(e)}>
                                 <div className="input__animation">
                                     <textarea onChange={e => this.setState({ message: e.target.value })} name="message" className="input message-input" type="text" value={this.state.message} required />
-                                    <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label>Your Message</label>
                                 </div>
                                 <div className="input__animation">
                                     <input required onChange={e => this.setState({ name: e.target.value })} name="name" className="input message-name" type="text" value={this.state.name} />
-                                    <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label>Your Name</label>
                                 </div>
                                 <div className="input__animation">
                                     <input required onChange={(e) => this.setState({ email: e.target.value })} name="email" className="input message-email" type="text" required value={this.state.email} />
-                                    <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label>Your Email</label>
                                 </div>
