@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import Typist from 'react-typist';
 import Background from "./Background"
-import Menu from "../components/Menu"
 import Socials from "../components/Socials"
 import Logo from "../components/Logo"
 
@@ -37,24 +36,16 @@ function MainPage() {
     return (
         <div className="MainPage">
             <div className="MainPage__background" />
-            <Menu />
             <Background />
             <div className="MainPage__content">
                 <div className="MainPage__text">
-                    <motion.div className="logo__container"
-                        variants={container}
-                        initial="hidden"
-                        animate="visible">
-                        <motion.div variants={config}>
-                            <h1>Dzień dobry,</h1>
-                        </motion.div>
-                        <motion.h1 variants={config}>
-                            <h1>Nazywam sie Karol Greń</h1>
-                        </motion.h1>
-                        <motion.div variants={config} className="text__colored">
-                            <h3>aspiruję na stanowisko stażysty <h3 style={{ color: "rgb(35, 41, 148)" }}> frontend </h3>developera</h3>
-                        </motion.div>
-                    </motion.div>
+                    <Typist stdTypingDelay="200">
+                        <span>Hi,</span>
+                        <br />
+                        <span>My name is Karol Greń</span>
+                        <br />
+                        <span>and Im a novice <span style={{ color: "rgb(35, 41, 148)" }}>frontend</span> developer</span>
+                    </Typist>
                 </div>
                 <div className="MainPage__socials">
                     <motion.div className="logo__container"

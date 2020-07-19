@@ -1,51 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&display=swap');
 
-.ProjectPage {
-    width: 100vw;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    font-family: 'Chakra Petch', sans-serif;
-    position: relative;
+@media screen and (min-width: 1060px) {
+    .ProjectPage {
+        width: 100vw;
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+        font-family: 'Chakra Petch', sans-serif;
+        position: relative;
+    }
+
+    .ProjectPage__content {
+        width: 70%;
+        margin: 0 auto;
+        transform-style: preserve-3d;
+    }
+
+    .ProjectPage__title {
+        border-bottom: 3px solid rgba(247, 247, 247, 0.9);
+        margin-bottom: 5rem;
+        -webkit-transform: translateZ(999px) scale(1);
+        transform: translateZ(999px) scale(1);
+        z-index: 1;
+    }
+
+    .ProjectPage__title h1 {
+        margin-bottom: 1rem;
+        font-size: 6rem;
+        color: rgba(247, 247, 247, 0.9);
+        -webkit-transform: translateZ(999px) scale(1);
+        transform: translateZ(999px) scale(1);
+    }
+
+    .ProjectPage__background {
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .ProjectPage__background h1 {
+        position: absolute;
+        left: -10vw;
+        margin: 0;
+        font-size: 30vw;
+        color: rgba(238, 238, 238, 0.03);
+    }
+
 }
 
-.ProjectPage__content {
-    width: 70%;
-    margin: 0 auto;
-    transform-style: preserve-3d;
-}
+@media screen and (max-width: 1060px) {
+    .ProjectPage {
+        width: 100vw;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        font-family: 'Chakra Petch', sans-serif;
+        position: relative;
+    }
 
-.ProjectPage__title {
-    border-bottom: 3px solid rgba(247, 247, 247, 0.9);
-    margin-bottom: 5rem;
-    -webkit-transform: translateZ(999px) scale(1);
-    transform: translateZ(999px) scale(1);
-    z-index: 1;
-}
+    .ProjectPage__content {
+        width: 100%;
+        margin: 0 auto;
+        transform-style: preserve-3d;
+    }
 
-.ProjectPage__title h1 {
-    margin-bottom: 1rem;
-    font-size: 6rem;
-    color: rgba(247, 247, 247, 0.9);
-    -webkit-transform: translateZ(999px) scale(1);
-    transform: translateZ(999px) scale(1);
-}
+    .ProjectPage__title {
+        margin: 0;
+        text-align: center;
+        -webkit-transform: translateZ(999px) scale(1);
+        transform: translateZ(999px) scale(1);
+        z-index: 1;
+    }
 
-.ProjectPage__background {
-    position: absolute;
-    top: 0;
-    z-index: 0;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
+    .ProjectPage__title h1 {
+        margin: 0;
+        font-size: 23vw;
+        color: rgba(247, 247, 247, 0.9);
+        -webkit-transform: translateZ(999px) scale(1);
+        transform: translateZ(999px) scale(1);
+    }
 
-.ProjectPage__background h1 {
-    position: absolute;
-    left: -10vw;
-    margin: 0;
-    font-size: 30vw;
-    color: rgba(238, 238, 238, 0.03);
+    .ProjectPage__background {
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .ProjectPage__background h1 {
+        position: absolute;
+        top: 12vh;
+        left: -10vw;
+        margin: 0;
+        font-size: 30vw;
+        color: rgba(238, 238, 238, 0.02);
+    }
 }
