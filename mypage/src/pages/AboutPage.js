@@ -5,7 +5,7 @@ import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 import "../css/pages/projectPage.css"
 import "../css/pages/aboutPage.css"
 
-import photo from "../assets/blancior.jpg"
+import photo from "../assets/me.jpg"
 
 class AboutPage extends Component {
     constructor() {

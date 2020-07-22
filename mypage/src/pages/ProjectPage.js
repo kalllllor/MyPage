@@ -57,7 +57,7 @@ class ProjectPage extends Component {
                             <h1 style={stylesBackground}>PROJECTS</h1>
                         </Parallax>
                     </ParallaxProvider>
-                    <div className="ProjectPage__content" style={styles}>
+                    <div className="ProjectPage__content">
                         <div className="ProjectPage__title">
                             <h1>Projects</h1>
                         </div>

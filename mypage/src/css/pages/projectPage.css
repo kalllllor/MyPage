@@ -105,3 +105,12 @@
         color: rgba(238, 238, 238, 0.02);
     }
 }
+
+.nonselect {
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none;
+        -ms-user-select: none; 
+            user-select: none;
+}

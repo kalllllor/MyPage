@@ -1,0 +1,104 @@
+@media screen and (min-width: 1061px) {
+    .Footer {
+        font-family: 'Chakra Petch', sans-serif;
+        width: 100%;
+        height: 10vh;
+        background-color: rgba(35, 41, 148, 0.8);
+    }
+
+    .footer__content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .footer__socials {
+        text-align: center;
+        width: 33%;
+    }
+
+    .footer__socials a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        margin: 1vw;
+        transition: all .2s ease-in-out;
+    }
+
+    .footer__socials a:hover {
+        color: white;
+    }
+
+    .footer__logo {
+        text-align: center;
+        width: 33%;
+        height: 100%;
+    }
+
+    .footer__logo img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+
+    .footer__rights {
+        width: 33%;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    .Footer {
+        font-family: 'Chakra Petch', sans-serif;
+        width: 100%;
+    }
+
+    .footer__content {
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 3vh 0;
+    }
+
+    .footer__socials {
+        text-align: center;
+        width: 100%;
+        margin: 2vh 0;
+    }
+
+    .footer__socials a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        margin: 1vw;
+        transition: all .2s ease-in-out;
+    }
+
+    .footer__socials a:hover {
+        color: white;
+    }
+
+    .footer__logo {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        margin: 2vh 0;
+    }
+
+    .footer__logo img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+
+    .footer__rights {
+        width: 100%;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 2vh 0;
+    }
+}

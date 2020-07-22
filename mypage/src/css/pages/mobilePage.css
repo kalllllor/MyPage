@@ -1,4 +1,56 @@
-head, body {
+head,
+body {
     overflow-x: hidden;
     position: relative;
+}
+
+.MobilePage__about {
+    position: relative;
+    font-family: 'Chakra Petch', sans-serif;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3vh 0;
+}
+
+.MobilePage__background {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.MobilePage__background h1 {
+    position: absolute;
+    top: -10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30vw;
+    color: rgba(238, 238, 238, 0.02);
+}
+
+.MobilePage__about img {
+    width: 70%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin: 5vh 0 5vh 0;
+}
+
+.MobilePage__about p {
+    width: 90%;
+    font-size: 6vw;
+    color: white;
+    font-family: 'Chakra Petch', sans-serif;
+    margin: 5vh auto;
+    letter-spacing: 2px;
+    text-align: justify;
 }

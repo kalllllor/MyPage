@@ -7,6 +7,7 @@ import ContactPage from "../src/pages/ContactPage"
 import MobilePage from "../src/pages/mobilePage/MobilePage"
 
 import Menu from "../src/components/Menu"
+import Footer from "../src/components/Footer"
 
 class App extends Component {
   constructor() {
@@ -46,6 +47,7 @@ class App extends Component {
           <ProjectPage id="project" />
           <AboutPage id="about" />
           <ContactPage id="contact" />
+          <Footer />
         </div>
       )
     }

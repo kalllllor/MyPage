@@ -22,17 +22,19 @@ function Project(props) {
                             <a target="_blank" rel="noopener noreferrer" href={props.data.gitLink}>
                                 <img src={gitIcon} alt="github" />
                             </a>
+                            <p>GitHub</p>
                         </li>
                         <li className="content__icon">
                             <a target="_blank" rel="noopener noreferrer" href={props.data.pageLink}>
                                 <img src={pageIcon} alt="page" />
                             </a>
+                            <p>Live</p>
                         </li>
                     </ul>
                 </div>
             </div>
             <ParallaxProvider >
-                <Parallax className={props.id % 2 === 0 ? "Project__title2" : "Project__title"} y={[-50, 30]}>
+                <Parallax className={props.id % 2 === 0 ? "Project__title2 nonselect" : "Project__title nonselect"} y={[-50, 30]}>
                     <h1>{props.data.id}</h1>
                 </Parallax>
             </ParallaxProvider>

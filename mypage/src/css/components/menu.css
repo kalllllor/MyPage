@@ -91,3 +91,15 @@ li {
 .Menu__links--visible {
     top: 0;
 }
+
+@media screen and (max-width: 1060px) {
+    .Menu__button {
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: fixed;
+        right: 10vw;
+        top: 10vh;
+        z-index: 100;
+    }
+}

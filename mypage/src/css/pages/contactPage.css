@@ -47,9 +47,8 @@
     .ContactPage__form {
         height: 400px;
         padding: 30px;
-        min-width: calc(450px + 10vw);
+        width: 55%;
         border: 3px solid rgba(247, 247, 247, 0.9);
-        margin: 0 auto 20px auto;
     }
 
     .input__animation {
@@ -139,15 +138,15 @@
     .bar {
         position: relative;
         display: block;
-        width: 100%;
+        width: 101%;
     }
 
     .bar:before,
     .bar:after {
         content: '';
-        height: 2px;
+        height: 3px;
         width: 0;
-        top: -50px;
+        top: -51px;
         position: absolute;
         background: rgba(247, 247, 247, 0.9);
         transition: 0.2s ease all;
@@ -175,10 +174,9 @@
         height: 400px;
         padding: 30px;
         border: 3px solid rgba(247, 247, 247, 0.9);
-        width: calc(100px + 10vw);
+        width: 25%;
         display: flex;
         flex-direction: column;
-        margin: 0 auto;
     }
 
     .socials h4 {
@@ -196,7 +194,7 @@
 
 @media screen and (max-width: 1060px) {
     .ContactPage {
-        padding-top: 30vh;
+        padding-top: 5vh;
         width: 100vw;
         position: relative;
         font-family: 'Chakra Petch', sans-serif;
@@ -232,7 +230,7 @@
 
     .ContactPage__background h1 {
         position: absolute;
-        top: 12vh;
+        top: 10vh;
         left: -10vw;
         margin: 0;
         font-size: 30vw;
@@ -246,20 +244,22 @@
     .ContactPage__socials {
         padding: 30px;
         border: 3px solid rgba(247, 247, 247, 0.9);
-        width: 100%;
+        width: 70%;
         display: flex;
         flex-direction: column;
-        margin: 10vh auto;
+        margin: 10vh auto 0 auto;
+        text-align: center;
     }
 
     .socials h4 {
         color: white;
-        font-size: 5vw;
+        font-size: 6vw;
+        margin: 3vh 0;
     }
 
     .socials p,
     .socials a {
-        font-size: 4vw;
+        font-size: 5vw;
         color: rgba(247, 247, 247, 0.9);
     }
 }
