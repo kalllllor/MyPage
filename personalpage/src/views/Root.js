@@ -1,10 +1,13 @@
 import React from "react";
-import Background from "components/Background/Background";
 import MainTemplate from "templates/MainTemplate";
-import Menu from "components/Menu/Menu";
+import MainPage from "views/MainPage";
 
 function Root() {
-  return <MainTemplate></MainTemplate>;
+  return (
+    <MainTemplate>
+      <MainPage />
+    </MainTemplate>
+  );
 }
 
 export default Root;

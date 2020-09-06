@@ -1,9 +1,9 @@
 export const theme = {
   primary: "hsl(237, 61.7%, 35.9%)",
-  secondary: "hsl(0,0%,96.9%)",
-  tertiary: "hsla(0,0%,93.3%,.03)",
+  secondary: "hsl(0,0%,50.9%)",
+  tertiary: "rgba(255, 255, 255, 0.2)",
   white: "hsl(0, 0%, 100%)",
-  black: "hsl(0, 0%, 0%)",
+  black: "hsla(0, 0%, 0%,0.2)",
   light: 300,
   lightSecond: 400,
   bold: 700,

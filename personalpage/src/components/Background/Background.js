@@ -36,7 +36,7 @@ class Background extends Component {
     const height = this.mount.clientHeight;
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(60, width / height, 1, 10000);
-    this.camera.position.z = 100;
+    this.camera.position.z = 300;
     this.camera.position.x = 1;
     this.camera.position.y = 1;
     // this.camera.rotation.x = Math.PI / 2;
@@ -68,6 +68,10 @@ class Background extends Component {
     this.raycaster = new THREE.Raycaster();
     this.mouse = new THREE.Vector2();
 
+    this.light = new THREE.PointLight(0xff0000, 1, 100);
+    this.light.position.set(100, 1, 1);
+    this.scene.add(this.light);
+
     this.animate();
 
     window.addEventListener("mousemove", this.onMouseMove, false);
@@ -80,7 +84,7 @@ class Background extends Component {
 
   animate = () => {
     this.starGeo.verticesNeedUpdate = true;
-    this.stars.rotateY(0.0005 + Math.random() * 0.0008);
+    this.stars.rotateY(0.0001 + Math.random() * 0.0001);
     this.mouseX = this.mouse.x;
     this.raycaster.setFromCamera(this.mouse, this.camera);
     this.camera.position.x = this.mouse.x * 3;

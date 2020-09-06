@@ -11,7 +11,7 @@
         transform: translate(-1rem, -0.5rem);
     }
 
-    &hover div {
+    &:hover div {
         background: rgba(255, 255, 255, 0.6);
     }
 
@@ -46,7 +46,7 @@
     margin: 0.5rem auto;
     width: 5rem;
     height: 0.4rem;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .Menu__links {
