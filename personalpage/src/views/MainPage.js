@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Button from "components/atoms/Button/Button";
 import Media from "components/Media/Media";
-import Menu from "components/Menu/Menu";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -27,7 +26,6 @@ const MediaWrapper = styled.div`
 function MainPage() {
   return (
     <Wrapper>
-      <Menu />
       <StyledButton>Contact me</StyledButton>
       <MediaWrapper>
         <Media />

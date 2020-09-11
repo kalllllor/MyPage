@@ -7,6 +7,8 @@ import ProjectPage from "views/ProjectPage";
 import CutscenePage from "views/CutscenePage";
 import ContactPage from "views/ContactPage";
 
+import Menu from "components/Menu/Menu";
+
 const Wrapper = styled.div`
   margin: 0 auto;
   position: relative;
@@ -54,12 +56,13 @@ class Root extends Component {
     return (
       <Wrapper onMouseMove={this.updateMousePosition.bind(this)}>
         <MainTemplate>
+          <Menu />
+          <MainPage />
           <div style={styles}>
-            <MainPage />
             <CutscenePage />
             <ProjectPage />
-            <ContactPage />
           </div>
+          <ContactPage />
         </MainTemplate>
       </Wrapper>
     );

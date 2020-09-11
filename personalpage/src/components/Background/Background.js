@@ -103,16 +103,6 @@ class Background extends Component {
     this.earth.scale.setX(1.1);
     this.scene.add(this.earth);
 
-    // this.monoGeo = new THREE.BoxGeometry(40, 3, 80);
-    // this.monoMat = new THREE.MeshPhongMaterial({
-    //   color: 0x000000, // optional environment map
-    //   specular: 0x050505,
-    //   shininess: 100,
-    // });
-    // this.monolith = new THREE.Mesh(this.monoGeo, this.monoMat);
-    // this.monolith.position.set(0, -1, 260);
-    // this.scene.add(this.monolith);
-
     this.godraysEffect = new GodRaysEffect(this.camera, this.circle, {
       resolutionScale: 1,
       density: 0.8,
@@ -148,7 +138,6 @@ class Background extends Component {
     this.raycaster.setFromCamera(this.mouse, this.camera);
     this.camera.position.x = this.mouse.x * 3;
     this.camera.position.y = this.mouse.y * 3;
-    this.camera.position.z = 300 + this.mouse.y * 3 + this.mouse.x * 3;
     this.composer.render(0.1);
     if (this.earth.position.y < -40) {
       this.earth.position.y += 0.01;
