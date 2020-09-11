@@ -10,9 +10,8 @@ export const Config = {
       opacity: 1,
       scale: 1,
       transition: {
-        delay: 0.3,
-        when: "beforeChildren",
-        staggerChildren: 0.9,
+        delayChildren: 0.5,
+        staggerChildren: 0.5,
       },
     },
   },

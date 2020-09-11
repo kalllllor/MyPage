@@ -1,26 +1,45 @@
 import React, { Component } from "react";
 import * as THREE from "three";
+import { WebGLRenderer } from "three";
+import {
+  GodRaysEffect,
+  EffectPass,
+  RenderPass,
+  EffectComposer,
+} from "postprocessing";
 import circle from "assets/icons/circle.png";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: block;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: hsla(0, 0%, 15%, 0.4);
 `;
 
 const BackgroundWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: -9999;
+`;
+
+const BackgroundShadow = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: hsla(0, 0%, 15%, 0.4);
 `;
 
 class Background extends Component {
@@ -39,10 +58,15 @@ class Background extends Component {
     this.camera.position.z = 300;
     this.camera.position.x = 1;
     this.camera.position.y = 1;
-    // this.camera.rotation.x = Math.PI / 2;
+
     this.scene.add(this.camera);
 
-    this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    this.renderer = new WebGLRenderer({
+      powerPreference: "high-performance",
+      antialias: false,
+      stencil: false,
+      depth: false,
+    });
     this.renderer.setClearColor("0x000000", 1);
     this.renderer.setSize(width, height);
     this.mount.appendChild(this.renderer.domElement);
@@ -58,19 +82,54 @@ class Background extends Component {
     }
     this.sprite = new THREE.TextureLoader().load(circle);
     this.starMaterial = new THREE.PointsMaterial({
-      color: 0xaaaaaa,
-      size: 0.9,
+      color: 0xddf4fe,
+      size: 0.8,
       map: this.sprite,
     });
     this.stars = new THREE.Points(this.starGeo, this.starMaterial);
     this.scene.add(this.stars);
 
+    this.circleGeo = new THREE.CircleGeometry(25, 50);
+    this.circleMat = new THREE.MeshBasicMaterial({ color: 0xddf4fe });
+    this.circle = new THREE.Mesh(this.circleGeo, this.circleMat);
+    this.circle.position.set(0, 0, 0);
+    this.circle.scale.setX(1.2);
+    this.scene.add(this.circle);
+
+    this.earthGeo = new THREE.CircleGeometry(35, 50);
+    this.earthMat = new THREE.MeshBasicMaterial({ color: 0x000000 });
+    this.earth = new THREE.Mesh(this.earthGeo, this.earthMat);
+    this.earth.position.set(0, -60, 20);
+    this.earth.scale.setX(1.1);
+    this.scene.add(this.earth);
+
+    // this.monoGeo = new THREE.BoxGeometry(40, 3, 80);
+    // this.monoMat = new THREE.MeshPhongMaterial({
+    //   color: 0x000000, // optional environment map
+    //   specular: 0x050505,
+    //   shininess: 100,
+    // });
+    // this.monolith = new THREE.Mesh(this.monoGeo, this.monoMat);
+    // this.monolith.position.set(0, -1, 260);
+    // this.scene.add(this.monolith);
+
+    this.godraysEffect = new GodRaysEffect(this.camera, this.circle, {
+      resolutionScale: 1,
+      density: 0.8,
+      decay: 0.95,
+      weight: 0.9,
+      samples: 100,
+    });
+    this.renderPass = new RenderPass(this.scene, this.camera);
+    this.effectPass = new EffectPass(this.camera, this.godraysEffect);
+    this.effectPass.renderToScreen = true;
+
+    this.composer = new EffectComposer(this.renderer);
+    this.composer.addPass(this.renderPass);
+    this.composer.addPass(this.effectPass);
+
     this.raycaster = new THREE.Raycaster();
     this.mouse = new THREE.Vector2();
-
-    this.light = new THREE.PointLight(0xff0000, 1, 100);
-    this.light.position.set(100, 1, 1);
-    this.scene.add(this.light);
 
     this.animate();
 
@@ -84,12 +143,16 @@ class Background extends Component {
 
   animate = () => {
     this.starGeo.verticesNeedUpdate = true;
-    this.stars.rotateY(0.0001 + Math.random() * 0.0001);
+    this.stars.rotateY(0.0001 + Math.random() * 0.0002);
     this.mouseX = this.mouse.x;
     this.raycaster.setFromCamera(this.mouse, this.camera);
     this.camera.position.x = this.mouse.x * 3;
     this.camera.position.y = this.mouse.y * 3;
-    this.renderer.render(this.scene, this.camera);
+    this.camera.position.z = 300 + this.mouse.y * 3 + this.mouse.x * 3;
+    this.composer.render(0.1);
+    if (this.earth.position.y < -40) {
+      this.earth.position.y += 0.01;
+    }
     requestAnimationFrame(this.animate);
   };
 
@@ -107,6 +170,7 @@ class Background extends Component {
   render() {
     return (
       <Wrapper>
+        <BackgroundShadow />
         <BackgroundWrapper
           ref={(mount) => {
             this.mount = mount;

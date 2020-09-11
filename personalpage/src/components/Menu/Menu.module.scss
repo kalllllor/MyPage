@@ -1,102 +1,91 @@
 .Menu__button {
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: fixed;
-    right: 16vw;
-    top: 12vh;
-    z-index: 100;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  z-index: 100;
+
+  div:nth-child(1) {
+    transform: translate(-1rem, -0.5rem);
+  }
+
+  &:hover div {
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  div:nth-child(3) {
+    transform: translate(-1rem, 0.5rem);
+    background: rgb(35, 41, 148);
+  }
+
+  &Active {
+    @extend .Menu__button;
 
     div:nth-child(1) {
-        transform: translate(-1rem, -0.5rem);
+      transform: rotate(-45deg) translateX(-1.2rem);
+      background: rgb(255, 255, 255);
     }
 
-    &:hover div {
-        background: rgba(255, 255, 255, 0.6);
+    div:nth-child(2) {
+      transform: translateX(40vw);
+      background: rgba(255, 255, 255, 1);
     }
 
     div:nth-child(3) {
-        transform: translate(-1rem, 0.5rem);
-        background: rgb(35, 41, 148);
+      transform: rotate(45deg) translateX(-1.2rem);
+      background: rgba(255, 255, 255, 1);
     }
-
-    &Active {
-        @extend .Menu__button;
-
-        div:nth-child(1) {
-            transform: rotate(-45deg) translateX(-1.2rem);
-            background: rgb(255, 255, 255);
-        }
-
-        div:nth-child(2) {
-            transform: translateX(40vw);
-            background: rgba(255, 255, 255, 1);
-        }
-
-        div:nth-child(3) {
-            transform: rotate(45deg) translateX(-1.2rem);
-            background: rgba(255, 255, 255, 1);
-        }
-    }
+  }
 }
 
 .burger__button {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    margin: 0.5rem auto;
-    width: 5rem;
-    height: 0.4rem;
-    transition: all 0.2s ease-in-out;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  margin: 0.5rem auto;
+  width: 5rem;
+  height: 0.4rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .Menu__links {
-    background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: calc(-100vh);
+  transition: 0.7s;
+  width: 100vw;
+  transition: all 0.5s ease-in-out;
+  z-index: 10;
+
+  li {
+    list-style: none;
+    font-size: 5vh;
+    margin-bottom: 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    position: fixed;
-    top: calc(-100vh);
-    transition: 0.7s;
-    width: 100%;
-    transition: all 0.5s ease-in-out;
-    z-index: 10;
+    justify-content: center;
+    cursor: pointer;
+  }
 
-    li {
-        list-style: none;
-        font-size: 5vh;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
+  li > a {
+    font-family: "Chakra Petch", sans-serif;
+    color: white;
+  }
 
-    li>a {
-        font-family: "Chakra Petch", sans-serif;
-        color: white;
-    }
+  li > a:hover {
+    color: #232994;
+    transition: all 0.1s ease-in-out;
+  }
 
-    li>a:hover {
-        color: #232994;
-        transition: all 0.1s ease-in-out;
-    }
-
-    &Visible {
-        @extend .Menu__links;
-        top: 0;
-    }
-}
-
-@media screen and (max-width: 1060px) {
-    .Menu__button {
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        position: fixed;
-        right: 10vw;
-        top: 10vh;
-        z-index: 100;
-    }
+  &Visible {
+    @extend .Menu__links;
+    top: 0;
+  }
 }

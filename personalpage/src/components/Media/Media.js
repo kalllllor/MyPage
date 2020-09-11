@@ -1,33 +1,11 @@
 import * as React from "react";
-import { motion } from "framer-motion";
-
-import "components/Media/socials.css";
-
+import { motion, Variants } from "framer-motion";
+import styled from "components/Media/Media.module.scss";
+import Paragraph from "components/atoms/Paragraph/Paragraph";
 import facebook from "assets/socials/facebook.png";
 import instagram from "assets/socials/instagram.png";
 import github from "assets/socials/github.png";
 import linkedin from "assets/socials/linkedin.png";
-
-const container = {
-  hidden: { opacity: 1, scale: 0 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delay: 0.3,
-      when: "beforeChildren",
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const config = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
-};
 
 const socialsArray = [
   {
@@ -48,27 +26,48 @@ const socialsArray = [
   },
 ];
 
-function Socials() {
+const containerVariants: Variants = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const childVariants: Variants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
+function Media() {
   return (
-    <div className="Socials">
+    <>
+      <Paragraph style={{ paddingLeft: "15px" }}>Media</Paragraph>
       <motion.ul
-        className="container"
-        variants={container}
+        className={styled.list}
+        variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {socialsArray.map((item) => (
           <motion.li
             key={item.index}
-            className="social__item"
-            variants={config}
+            className={styled.item}
+            variants={childVariants}
           >
             <img src={item.icon} alt={item.tekst} />
           </motion.li>
         ))}
       </motion.ul>
-    </div>
+    </>
   );
 }
 
-export default Socials;
+export default Media;

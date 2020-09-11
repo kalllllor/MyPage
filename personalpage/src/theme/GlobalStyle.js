@@ -19,6 +19,7 @@ li {
   }
   
   body {
+    overflow-x: hidden;
     margin:0;
     padding:0;
     font-size: 1.6rem;

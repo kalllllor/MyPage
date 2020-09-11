@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&display=swap");
+
+.Wrapper {
+  height: 500px;
+  padding: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  position: relative;
+  margin: 0 20px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    border: 2px solid rgba(255, 255, 255, 0.4);
+  }
+  @media (min-width: 1281px) {
+    width: 700px;
+  }
+
+  @media (max-width: 1280px) and (min-width: 1000px) {
+    width: 600px;
+  }
+
+  @media (max-width: 1040px) and (min-width: 801px) {
+    width: 500px;
+  }
+  @media (max-width: 800px) {
+    width: 90%;
+    margin: 20px 0;
+    padding: 10%;
+  }
+}
+
+.InputWrapper {
+  position: relative;
+  padding-bottom: 35px;
+  padding-top: 20px;
+}
+
+label {
+  color: white;
+  position: absolute;
+  pointer-events: none;
+  top: 0px;
+  pointer-events: none;
+  transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  -webkit-transition: 0.3s ease all;
+}
+
+input[type="text"],
+textarea[type="text"] {
+  color: white;
+  font-size: 15px;
+}
+
+input:focus ~ label,
+input:valid ~ label,
+textarea:focus ~ label,
+textarea:valid ~ label {
+  top: -20px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+::placeholder {
+  color: white;
+}
+
+::-webkit-resizer {
+  display: none;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.bar:before,
+.bar:after {
+  content: "";
+  height: 3px;
+  width: 0;
+  top: -33px;
+  position: absolute;
+  background: hsl(0, 0%, 100%);
+  transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  -webkit-transition: 0.3s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+input:focus ~ .bar:before,
+input:focus ~ .bar:after,
+textarea:focus ~ .bar:before,
+textarea:focus ~ .bar:after {
+  width: 50%;
+}
+
+.Button {
+  position: absolute;
+  bottom: 20px;
+}
