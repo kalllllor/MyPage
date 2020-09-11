@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/KarolGren/static/css/main.f6a000cd.chunk.css",
+    "main.js": "/KarolGren/static/js/main.f5aecc02.chunk.js",
+    "main.js.map": "/KarolGren/static/js/main.f5aecc02.chunk.js.map",
+    "runtime-main.js": "/KarolGren/static/js/runtime-main.9e812a01.js",
+    "runtime-main.js.map": "/KarolGren/static/js/runtime-main.9e812a01.js.map",
+    "static/js/2.7ad6590a.chunk.js": "/KarolGren/static/js/2.7ad6590a.chunk.js",
+    "static/js/2.7ad6590a.chunk.js.map": "/KarolGren/static/js/2.7ad6590a.chunk.js.map",
+    "index.html": "/KarolGren/index.html",
+    "precache-manifest.4d86d74f097cce9d48664c9e2f881ac9.js": "/KarolGren/precache-manifest.4d86d74f097cce9d48664c9e2f881ac9.js",
+    "service-worker.js": "/KarolGren/service-worker.js",
+    "static/css/main.f6a000cd.chunk.css.map": "/KarolGren/static/css/main.f6a000cd.chunk.css.map",
+    "static/js/2.7ad6590a.chunk.js.LICENSE.txt": "/KarolGren/static/js/2.7ad6590a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9e812a01.js",
+    "static/js/2.7ad6590a.chunk.js",
+    "static/css/main.f6a000cd.chunk.css",
+    "static/js/main.f5aecc02.chunk.js"
+  ]
+}
