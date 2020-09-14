@@ -9,12 +9,9 @@ const Wrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100px;
-  display: grid;
-  justify-content: center;
-  align-content: center;
-
-  gap: 4px;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 `;
 
 const Socials = styled.div`
@@ -32,9 +29,13 @@ const Socials = styled.div`
 function Footer() {
   return (
     <Wrapper>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
+      <img src={logo} alt="logo" />
+      <Socials>
+        <a href="">facebook</a>
+        <a href="">instagram</a>
+        <a href="">linkedin</a>
+      </Socials>
+      <Paragraph>Karol Greń 2020</Paragraph>
     </Wrapper>
   );
 }

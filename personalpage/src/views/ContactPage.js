@@ -24,7 +24,6 @@ function ProjectPage({ x, y }) {
         <Form />
         <Contact />
       </Wrapper>
-      <Footer />
     </SectionTemplate>
   );
 }
