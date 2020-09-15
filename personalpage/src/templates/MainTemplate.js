@@ -21,8 +21,12 @@ const Wrapper = styled.div`
     width: 700px;
     max-width: 100%;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 768px) and (min-width: 500px) {
     width: 90%;
+  }
+
+  @media (max-width: 500px) {
+    width: 100vw;
   }
 
   @media (min-width: 1200px) {
@@ -38,8 +42,7 @@ const Wrapper = styled.div`
     padding-left: 15px;
   }
   @media (min-width: 576px) {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 0;
   }
 `;
 

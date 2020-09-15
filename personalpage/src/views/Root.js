@@ -58,7 +58,7 @@ class Root extends Component {
         <MainTemplate>
           <Menu />
           <MainPage />
-          <div style={styles}>
+          <div>
             <CutscenePage />
             <ProjectPage />
           </div>

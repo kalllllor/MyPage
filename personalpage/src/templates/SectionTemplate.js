@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import PropTypes from "prop-types";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import Heading from "components/atoms/Heading/Heading";
@@ -14,10 +14,9 @@ const Wrapper = styled.div`
 const StyledHeading = styled(Heading)`
   width: 90%;
   top: 0;
-  left: 10px;
   margin: 0;
   position: relative;
-  color: ${({ theme }) => theme.tertiary};
+  color: rgba(255, 255, 255, 0.08);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -25,46 +24,43 @@ const StyledHeading = styled(Heading)`
   -ms-user-select: none;
   user-select: none;
   transform-style: preserve-3d;
-  @media (min-width: 1281px) {
-    font-size: 28rem;
 
-    ::after {
-      font-size: 10rem;
-    }
+  @media (min-width: 1281px) {
+    font-size: 27rem;
   }
 
   @media (max-width: 1280px) and (min-width: 1000px) {
     font-size: 23rem;
-
-    ::after {
-      font-size: 10rem;
-    }
   }
 
   @media (max-width: 1000px) and (min-width: 800px) {
     font-size: 20rem;
-
-    ::after {
-      font-size: 10rem;
-    }
   }
 
   @media (max-width: 799px) and (min-width: 500px) {
-    font-size: 10rem;
+    font-size: 15rem;
+  }
 
-    ::after {
-      font-size: 5rem;
-    }
+  @media (max-width: 500px) {
+    font-size: 7rem;
   }
   /* transform: translate(${({ x }) => x}px, ${({ y }) => y}px); */
   ::after {
     position: absolute;
-    left: 0;
-    padding: 0 30px;
-    bottom: 50%;
-    transform: translateY(50%);
+    top: 0;
+    left: 10px;
     content: ${({ title }) => title};
     color: ${({ theme }) => theme.secondary};
+    /* transform: translate(${({ x }) => x * 10}px, ${({ y }) => y * 10}px); */
+  }
+
+  ::before {
+    position: absolute;
+    transform: translateZ(-999px);
+    top: 0;
+    left: 5px;
+    content: ${({ title }) => title};
+    color: ${({ theme }) => theme.primary};
     /* transform: translate(${({ x }) => x * 10}px, ${({ y }) => y * 10}px); */
   }
 `;

@@ -6,18 +6,28 @@ import Paragraph from "components/atoms/Paragraph/Paragraph";
 const Wrapper = styled.div`
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
   height: 100px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 15vw 25vw 15vw;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-around;
+  @media (max-width: 800px) {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+  }
 `;
 
 const Socials = styled.div`
   justify-content: center;
   align-content: center;
+  padding: 20px 0;
+  display: block;
   a {
+    display: inline-block;
     padding: 0 10px;
     font-size: ${({ theme }) => theme.s};
     font-weight: ${({ theme }) => theme.regular};
@@ -26,16 +36,20 @@ const Socials = styled.div`
   }
 `;
 
+const ParagraphWrapper = styled.div``;
+
 function Footer() {
   return (
     <Wrapper>
       <img src={logo} alt="logo" />
       <Socials>
         <a href="">facebook</a>
-        <a href="">instagram</a>
-        <a href="">linkedin</a>
+        <a href="">facebook</a>
+        <a href="">facebook</a>
       </Socials>
-      <Paragraph>Karol Greń 2020</Paragraph>
+      <ParagraphWrapper>
+        <Paragraph>Karol Greń 2020</Paragraph>
+      </ParagraphWrapper>
     </Wrapper>
   );
 }

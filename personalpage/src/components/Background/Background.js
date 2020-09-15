@@ -11,18 +11,16 @@ import circle from "assets/icons/circle.png";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: block;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
 `;
 
 const BackgroundWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: block;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -30,16 +28,15 @@ const BackgroundWrapper = styled.div`
 `;
 
 const BackgroundShadow = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   padding: 0;
   margin: 0;
   border: 0;
-  display: block;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: hsla(0, 0%, 15%, 0.4);
+  background-color: hsla(0, 0%, 10%, 0.6);
 `;
 
 class Background extends Component {
@@ -83,7 +80,7 @@ class Background extends Component {
     this.sprite = new THREE.TextureLoader().load(circle);
     this.starMaterial = new THREE.PointsMaterial({
       color: 0xddf4fe,
-      size: 0.8,
+      size: 0.9,
       map: this.sprite,
     });
     this.stars = new THREE.Points(this.starGeo, this.starMaterial);
@@ -136,8 +133,10 @@ class Background extends Component {
     this.stars.rotateY(0.0001 + Math.random() * 0.0002);
     this.mouseX = this.mouse.x;
     this.raycaster.setFromCamera(this.mouse, this.camera);
-    this.camera.position.x = this.mouse.x * 3;
-    this.camera.position.y = this.mouse.y * 3;
+    if (window.innerWidth > 600) {
+      this.camera.position.x = this.mouse.x * 3;
+      this.camera.position.y = this.mouse.y * 3;
+    }
     this.composer.render(0.1);
     if (this.earth.position.y < -40) {
       this.earth.position.y += 0.01;

@@ -23,6 +23,7 @@ function ProjectPage({ x, y }) {
       <Wrapper>
         <Form />
         <Contact />
+        <Footer />
       </Wrapper>
     </SectionTemplate>
   );
